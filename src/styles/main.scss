@@ -187,26 +187,32 @@ body {
     &__tomato {
         width: 11rem;
         position: absolute;
-        bottom: 295px;
+        bottom: 100px;
         right: 5px;
     }
     &__avocado {
         width: 14rem;
         position: absolute;
-        top: 90px;
+        top: 50px;
         right: -35px;
     }
     &__beans {
         width: 14rem;
         position: absolute;
-        bottom: 220px;
+        bottom: 150px;
         left: 0;
     }
     &__pepper {
         width: 8.6rem;
         position: absolute;
-        top: 380px;
-        left: 35px;
+        top: 390px;
+        left: 10px;
+    }
+    &__cucumber {
+        width: 7rem;
+        position: absolute;
+        top: 0;
+        left: 525px;
     }
 }
 .title {
