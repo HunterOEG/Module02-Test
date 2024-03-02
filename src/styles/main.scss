@@ -18,11 +18,11 @@ body {
 }
 
 .header {
-    max-width: 1440px;
-    margin: 0 auto 6rem;
-    padding: 4rem 15px 0 15px;
     display: flex;
     justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto 4.8rem;
+    padding: 4rem 15px 0 15px;
     align-items: center;
     &__nav {
         display: flex;
@@ -48,8 +48,9 @@ body {
     }
     &__cart {
         display: block;
-        width: 3.8rem;
-        height: 3.8rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 0;
         border-radius: 100%;
         background-color: $orange;
         background-image: url(../images/cart.svg);
@@ -75,8 +76,8 @@ body {
     display: block;
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 12.3rem;
+    background-size: contain;
+    width: 12rem;
     height: 3.2rem;
 }
 
@@ -92,13 +93,15 @@ body {
     background-image: url(../images/main.png);
     background-size: cover;
     background-position-x: center;
+    background-repeat: no-repeat;
+    z-index: 0;
     &__item {
         margin-left: 12rem;
         max-width: 378px;
         margin-top: 6rem;
     }
     &__link {
-        margin-top: 6rem;
+        margin-top: 5.3rem;
     }
     &__flex {
         display: flex;
@@ -111,8 +114,8 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-basis: 763px;
-        height: 763px;
+        flex-basis: 758px;
+        height: 758px;
         position: relative;
         border: 1px solid rgba($green, 0.4);
         border-radius: 100%;
@@ -122,14 +125,17 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 658px;
-        height: 658px;
+        width: 656px;
+        height: 656px;
         border: 1px solid rgba($green, 0.4);
         border-radius: 100%;
     }
     &__image {
         width: 92%;
         filter: drop-shadow(10px 20px 15px rgba(39, 48, 0, 0.5));
+    }
+    &__text {
+        padding-top: 4rem;
     }
     &__btn {
         padding: 0;
@@ -138,6 +144,7 @@ body {
         text-align: left;
         background-color: transparent;
         color: $green;
+        z-index: 100;
         &:hover {
             .main__btn {
                 &::before {
@@ -147,78 +154,85 @@ body {
             }
         }
         &::before {
-            position: absolute;
             width: 11px;
             height: 11px;
+            position: absolute;
             content: '';
             background-color: $green;
             box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
             border-radius: 100%;
         }
         &_1 {
-            top: 87px;
-            left: 25px;
+            top: 46px;  /*87*/
+            left: 67px; /*25*/
             &::before {
-                bottom: 0;
-                left: 75px;
+                bottom: 9px; /*0*/
+                right: -35px; /*left 75*/
             }
         }
         &_2 {
             top: 194px;
-            right: 4px;
+            right: 2px; /*4*/
             &::before {
-                top: 14px;
-                right: 88px;
+                top: 17px; /*14*/
+                left: -26px; /*right88*/
             }
         }
         &_3 {
-            bottom: -45px;
-            right: 240px;
+            bottom: -50px;  /*-45*/
+            right: 244px;   /*240*/
             &::before {
-                bottom: 55px;
-                left: 17px;
+                top: -24px;  /*bottom 55*/
+                left: 13px;   /*17*/
             }
         }
     }
     &__food {
         display: block;
         color: rgba($green, 0.8);
+        margin-bottom: 0.5rem;
     }
     &__tomato {
         width: 11rem;
         position: absolute;
-        bottom: 100px;
-        right: 5px;
+        bottom: 113px;
+        right: 0;
+        z-index: -1;
     }
     &__avocado {
-        width: 14rem;
+        width: 17.8rem;
         position: absolute;
-        top: 50px;
-        right: -35px;
+        top: 56px;
+        right: 0;
+        z-index: -1;
     }
     &__beans {
-        width: 14rem;
+        width: 10.5rem;
         position: absolute;
-        bottom: 150px;
+        bottom: 0;
         left: 0;
+        z-index: -1;
     }
     &__pepper {
         width: 8.6rem;
         position: absolute;
-        top: 390px;
-        left: 10px;
+        top: 397px;
+        left: 20px;
+        z-index: -1;
     }
     &__cucumber {
-        width: 7rem;
+        width: 8.5rem;
         position: absolute;
         top: 0;
-        left: 525px;
+        left: 34%;
+        z-index: -1;
     }
 }
 .title {
     font-family: $font-cormorant;
     font-weight: 700;
     font-size: 8rem;
+    line-height: 1;
     margin: 0;
     &__span {
         font-style: italic;
@@ -231,18 +245,92 @@ body {
 }
 .description {
     margin: 0;
+    line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+    }
+    &_size-m {
+        font-size: 2.4rem;
     }
 }
 .link {
     color: $white;
+    letter-spacing: 0.13rem;
     text-transform: uppercase;
-    padding: 2.5rem 4.2rem;
+    padding: 2.4rem 4.3rem;
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
 
+}
+
+.offer {
+    padding-top: 2rem;
+    padding-bottom: 200px;
+    background-image: url(../images/offer.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    &__text {
+        max-width: 700px;
+        margin-top: 6rem;
+    }
+    &__slider {
+        padding-top: 100px;
+        overflow: hidden;
+    }
+}
+.swiper {
+    overflow: initial;
+    &-slide {
+        max-width: 465px;
+        padding-left: 50px;
+        padding-bottom: 40px;
+        border: 1px solid $green;
+        border-radius: 16px;
+    }
+    &-slide:first-child {
+        padding-left: 40px;
+        background-image: url(../images/milk.png);
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+    &-slide:nth-child(2) {
+        background-image: url(../images/pasta.png);
+        background-repeat: no-repeat;
+    }
+    &-slide:nth-child(3) {
+        background-image: url(../images/steaks.png);
+        background-repeat: no-repeat;
+    }
+    &-pagination {
+        display: none;
+    }
+    &-button-next, &-button-prev {
+        top: -60px;
+        &::after {
+            font-size: 18px;
+            color: $green;
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 100px;
+        opacity: 0.5;
+    }
+    &-slide__title {
+        font-size: 2.4rem;
+    }
+    &-slide__text {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    &-slide__link {
+        color: $green;
+        font-size: 1.6rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 }
