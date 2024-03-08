@@ -163,27 +163,27 @@ body {
             border-radius: 100%;
         }
         &_1 {
-            top: 46px;  /*87*/
-            left: 67px; /*25*/
+            top: 46px;  
+            left: 67px; 
             &::before {
-                bottom: 9px; /*0*/
-                right: -35px; /*left 75*/
+                bottom: 9px; 
+                right: -35px; 
             }
         }
         &_2 {
             top: 194px;
-            right: 2px; /*4*/
+            right: 2px; 
             &::before {
-                top: 17px; /*14*/
-                left: -26px; /*right88*/
+                top: 17px; 
+                left: -26px; 
             }
         }
         &_3 {
-            bottom: -50px;  /*-45*/
-            right: 244px;   /*240*/
+            bottom: -50px;  
+            right: 244px;   
             &::before {
-                top: -24px;  /*bottom 55*/
-                left: 13px;   /*17*/
+                top: -24px;  
+                left: 13px;   
             }
         }
     }
@@ -254,15 +254,20 @@ body {
     }
 }
 .link {
+    display: inline-block;
+    padding: 2.4rem 4.3rem;
     color: $white;
     letter-spacing: 0.13rem;
     text-transform: uppercase;
-    padding: 2.4rem 4.3rem;
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
     border-radius: 3.8rem;
-    display: inline-block;
+    &_min {
+        padding: 2rem 3.4rem;
+        font-size: 1.4rem;
+        box-shadow: 0px 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
+    }
 
 }
 
@@ -287,11 +292,7 @@ body {
 .swiper {
     overflow: initial;
     &-slide {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 520px;
-        padding: 4rem 3.7rem;
+        padding: 3rem 3.7rem 3.8rem;
         border: 1px solid rgba($green, 0.4);
         border-radius: 2rem;
         box-sizing: border-box;
@@ -300,7 +301,11 @@ body {
         position: relative;
         z-index: 0;
         &_white {
+            display: flex;
+            flex-direction: column;
             justify-content: flex-end;
+            height: 520px;
+            padding: 4rem 3.7rem;
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
@@ -336,6 +341,18 @@ body {
             font-family: $font-cormorant;
             font-size: 3rem;
             color: $green;
+        }
+        &__description {
+            max-width: 300px;
+            min-height: 55px;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            font-size: 1.8rem;
+            line-height: 1.5;
+        }
+        &__price {
+            margin-bottom: 3rem;
+            font-size: 2.4rem;
         }
         &__hover {
             height: 0;
@@ -379,7 +396,10 @@ body {
             overflow: hidden;
         }
         &__image {
-            height: 100%;
+            width: 100%;
+            min-width: 315px;
+            height: 322px;
+            object-fit: contain;
         }
         &__footer {
             display: flex;
@@ -398,7 +418,7 @@ body {
             }
         }
         &::after {
-            font-size: 2rem;
+            font-size: 20px;
             color: rgba($green, .4);
         }
     }
@@ -421,6 +441,10 @@ body {
         background-color: transparent;
         border-radius: 100%;
         background-position: center center;
+        &_min {
+            width: 40px;
+            height: 40px;
+        }
     }
     &__minus {
         pointer-events: none;
@@ -430,7 +454,6 @@ body {
         opacity: .4;
     }
     &__plus {
-        pointer-events: none;
         background-image: url(../images/plus-counter.svg);
         background-size: 20px 11px;
         background-repeat: no-repeat;
@@ -441,9 +464,13 @@ body {
         text-align: center;
         font-size: 2.4rem;
         border: none;
+        &_min {
+            width: 33px;
+        }
     }
 }
 .about {
+    padding-top: 37px;
     padding-bottom: 100px;
     &__box {
         display: flex;
@@ -501,4 +528,114 @@ body {
         }
     }
 }
-
+.trends {
+    padding-bottom: 20rem;
+    background-image: url(../images/background4.png);
+    background-repeat: no-repeat;
+}
+.catalog {
+    &__list {
+        margin-top: 8.5rem;
+        margin-bottom: 5rem;
+    }
+    &__btn {
+        display: block;
+        margin: 60px auto 0 auto;
+        color: $green;
+        background-color: transparent;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.6rem;
+        position: relative;
+        &::before {
+            content: '';
+            width: 2.5rem;
+            height: 2.5rem;
+            bottom: 0;
+            left: -30px;
+            background-image: url(../images/catalog/refresh.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+    }
+}
+.category {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-left: 0;
+    list-style-type: none;
+    &__item {
+        flex-basis: 230px;
+        text-align: center;
+    }
+    &__link {
+        display: block;
+        padding: 2.4rem 0;
+        border: 1px solid rgba($green, .5);
+        color: rgba($green, .5); 
+        font-size: 1.8rem;
+        text-decoration: none;
+        border-radius: 4rem;
+        &:hover {
+            border: 1px solid $orange;
+            color: $orange;
+        }
+    }
+}
+   .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    &__item {
+        padding: 2.7rem 3rem 3.8rem;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 2rem;
+        box-sizing: border-box;
+        &:hover {
+            box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
+        }
+    }
+    &__cover {
+        width: 100%;
+        height: 104px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    &__image {
+        width: 100%;
+        max-width: 351px;
+        height: 100%;
+        object-fit: contain;
+    }
+    &__title {
+        margin-top: 1.7rem;
+        margin-bottom: 0;
+        font-family: $font-cormorant;
+        font-size: 3rem;
+        color: $green;
+    }
+    &__description {
+        max-width: 300px;
+        min-height: 61px;
+        margin-top: 1.8rem;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+        color: rgba($green, .7);
+        line-height: 1.5;
+    }
+    &__price {
+        margin-top: 0;
+        margin-bottom: 3rem;
+        font-size: 2.4rem;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+   }
